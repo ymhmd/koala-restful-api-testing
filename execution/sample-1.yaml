@@ -1,0 +1,19 @@
+description: "First test suite ever"
+steps:
+  - description: Get token and validate it exists
+    url: '{@global_vars:api_url}'
+    type: GET
+    headers:
+    body:
+    statusCode: 200
+    validations: Token, null, string
+    wait: 0
+
+  - description: Get token and validate response
+    url: '{@global_vars:api_url}'
+    type: GET
+    headers:
+    body:
+    statusCode: 200
+    validations: 'Value_float, 123.123, float; Value_boolean, true, boolean'
+    wait: 0

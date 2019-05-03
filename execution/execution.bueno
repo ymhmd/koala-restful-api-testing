@@ -1,0 +1,4 @@
+GlobalVarsFile=globalVars.bueno
+FileFormat=YAML
+YAMLFiles=sample.yaml, sample-2.yaml
+JiraIntegration=False

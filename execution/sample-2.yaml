@@ -1,0 +1,19 @@
+description: "Second test suite ever"
+steps:
+  - description: Get token and validate it exists
+    url: '{@global_vars:api_url}'
+    type: GET
+    headers:
+    body:
+    statusCode: 200
+    validations: Token, null, string
+    wait: 0
+
+  - description: Get token and validate array returned
+    url: '{@global_vars:api_url}'
+    type: GET
+    headers:
+    body:
+    statusCode: 200
+    validations: 'items[0].item, test_1, string;'
+    wait: 0
