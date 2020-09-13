@@ -10,6 +10,10 @@ public class Step {
     private Object statusCode;
     private Object validations;
     private Object wait;
+    private Object dbUrl;
+    private Object dbUsername;
+    private Object dbPassword;
+    private Object dbQuery;
 
     public Object getDescription() {
         return description;
@@ -73,5 +77,37 @@ public class Step {
 
     public void setWait(Object wait) {
         this.wait = wait;
+    }
+
+    public Object getDbUrl() {
+        return dbUrl;
+    }
+
+    public void setDbUrl(Object dbUrl) {
+        this.dbUrl = dbUrl;
+    }
+
+    public Object getDbUsername() {
+        return dbUsername;
+    }
+
+    public void setDbUsername(Object dbUsername) {
+        this.dbUsername = dbUsername;
+    }
+
+    public Object getDbPassword() {
+        return dbPassword;
+    }
+
+    public void setDbPassword(Object dbPassword) {
+        this.dbPassword = dbPassword;
+    }
+
+    public Object getDbQuery() {
+        return dbQuery;
+    }
+
+    public void setDbQuery(Object dbQuery) {
+        this.dbQuery = dbQuery;
     }
 }

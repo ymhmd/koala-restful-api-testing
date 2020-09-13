@@ -1,3 +1,6 @@
 {
-  "api_url": "https://apitool.getsandbox.com/GetToken"
+  "api_url": "https://apitool.getsandbox.com/GetToken",
+  "db_url": "jdbc:postgresql://db_domain:port/db_name",
+  "db_username": "my_username",
+  "db_password": "my_password"
 }

@@ -1,0 +1,15 @@
+description: "Database test suite"
+steps:
+  - description: Execute postgres database statement
+    type: DATABASE_QUERY
+    dbUrl: 'jdbc:postgresql://domain:port/db_name'
+    dbUsername: "my_username"
+    dbPassword: "my_password"
+    dbQuery: "select * from my_table;"
+
+  - description: Execute postgres database statement reading data from global_vars
+    type: DATABASE_QUERY
+    dbUrl: '{@global_vars:db_url}'
+    dbUsername: '{@global_vars:db_username}'
+    dbPassword: '{@global_vars:db_password}'
+    dbQuery: "select * from my_table;"
