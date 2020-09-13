@@ -25,11 +25,20 @@ public class test {
         yamlRunner.executeYamlSuite(YAMLFiles, GlobalVarsFile);
     }
 
-
     @Test
     public void databaseTestSuite () {
         String GlobalVarsFile = "execution/globalVars.json";
         String YAMLFiles = "execution/sample-database.yaml";
+
+        YamlRunner yamlRunner = new YamlRunner();
+
+        yamlRunner.executeYamlSuite(YAMLFiles, GlobalVarsFile);
+    }
+
+    @Test
+    public void graphqlTestSuite () {
+        String GlobalVarsFile = "execution/globalVars.json";
+        String YAMLFiles = "execution/sample-graphql.yaml";
 
         YamlRunner yamlRunner = new YamlRunner();
 

@@ -1,0 +1,21 @@
+description: "GraphQL test suite"
+steps:
+  - description: Execute GRAPHQL query
+    type: GRAPHQL
+    url: 'http://samplegraphql.com'
+    body: '{
+             item {
+               itemDetails
+             }
+           }'
+    statusCode: 200
+
+  - description: Execute GRAPHQL query reading data from global_vars
+    type: GRAPHQL
+    url: '{@global_vars:graphql_url}'
+    body: '{
+             item {
+               itemDetails
+             }
+           }'
+    statusCode: 200
