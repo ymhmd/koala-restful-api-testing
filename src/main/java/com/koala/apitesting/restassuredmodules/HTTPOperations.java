@@ -3,6 +3,7 @@ package com.koala.apitesting.restassuredmodules;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.config.EncoderConfig;
 import com.jayway.restassured.response.Response;
+import org.json.simple.JSONObject;
 
 import java.util.Map;
 
@@ -130,6 +131,19 @@ public class HTTPOperations {
                         .when()
                         .put(URL);
             }
+        } else if (Type.trim().equalsIgnoreCase("GRAPHQL")) {
+            headersMap.put("Content-Type", "application/json");
+            headersMap.put("Accept", "application/json");
+            JSONObject json = new JSONObject();
+            json.put("query", body);
+            body = json.toString();
+            res = given().config(RestAssured.config()
+                    .encoderConfig(EncoderConfig.encoderConfig()
+                            .appendDefaultContentCharsetToContentTypeIfUndefined(false)))
+                    .relaxedHTTPSValidation().headers(headersMap)
+                    .body(body)
+                    .when()
+                    .post(URL);
         }
         return res;
     }

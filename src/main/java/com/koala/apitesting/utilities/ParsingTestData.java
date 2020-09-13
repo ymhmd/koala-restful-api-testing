@@ -64,7 +64,7 @@ public class ParsingTestData {
     }
 
     public static String getAllString(String str, ArrayList<Response> previousJsonResponse, Map<String, String> globalVars, int step, String executionId) {
-        Pattern p = Pattern.compile("\\{[^\\}]*\\}");
+        Pattern p = Pattern.compile("\\{@[^\\}]*\\}");
         Matcher m = p.matcher(str);
         while (m.find()) {
             String d = str.substring(m.start(), m.end());
